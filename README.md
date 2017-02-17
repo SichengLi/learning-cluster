@@ -337,7 +337,9 @@ v)
 	- Use the private key: `id_rsa`. Copy this with `scp` to your laptop beforehand. You could use this [link](http://www.hypexr.org/linux_scp_help.php) for reference. Upload the file. Do not copy paste the key from terminal (there might be extra white-spaces or lines added/missing).
 	- All machine, /etc/hosts need to have their FQDN inside. Also, according to Install Documentation, check `hostname -f` is return its FQDN.
 * Before Install the services, better to carefully handle the warning from the registeration section. Check whether NTP is intalled.If you meet warings when confirms hosts which said ntp services error, you may check whether you have already started up the ntp on each machine, if not, use this command line 'sudo service ntp start'.
-* The services you need to install are `HDFS`, `MapReduce2`, `Yarn`, `ZooKeeper` and  `Ambari Metrics`. Some other services may fail so do not install services that you do not need.
+* The services you need to install are `HDFS`, `
+
+2`, `Yarn`, `ZooKeeper` and  `Ambari Metrics`. Some other services may fail so do not install services that you do not need.
 * You need to install both `ambari-server` and `ambari-agent` on `losalamos`, and you only need to install `ambari-agent` on three innet machine,
 * But if everything goes smoothly, you only have to manually install `ambari-server` on `losalamos`, and everything else can be done through the [Ambari Web](http://losalamos.pc.cs.cmu.edu:8080) in web browser.
 * If any/all of the 'target hosts' fail to register, it might be because of the following problems:
@@ -382,6 +384,7 @@ If everything is green on the dashboard of Ambari, you can follow [this](http://
 4. Use command `yarn` to run the project and remember to set the output directory of your project or you will hard to find it
 5. Run the program under the user `hdfs` (HADOOP_USER_NAME=hdfs).
 6. If you want to move the files to HDFS via Ambari UI, you could follow the steps mentioned [here](https://developer.ibm.com/hadoop/blog/2015/10/22/browse-hdfs-via-ambari-files-view/). Also, it is better to create a separate user 'hdfs' instead of 'admin' in Ambari if you follow this approach and give it root permissions in Ambari.
+7. The folder mentioned in the tutorial (StartsWithCount) may not be writable when you want to output your results in it. You can create another folder (e.g. /tmp/...) to contain the input and output files
 
 ### Tips
 
